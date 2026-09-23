@@ -29,3 +29,10 @@
 <img width="1920" height="1080" alt="Screenshot (107)" src="https://github.com/user-attachments/assets/e26373b5-6ef8-4a7a-b828-3f5dcf5cd5f1" />
 <img width="1920" height="1080" alt="Screenshot (108)" src="https://github.com/user-attachments/assets/2e314cdb-55bb-4dbf-b58a-7d968a180f5f" />
 <img width="1920" height="1080" alt="Screenshot (109)" src="https://github.com/user-attachments/assets/210636eb-19f6-444c-b5ee-375a974023ff" />
+
+**Assets Used**:
+1. Particle Effect (Starter pack) by Unity Technologies
+2. Missiles or projectiles by BenjaTheMaker
+3. Soldiers by Polygon Blacksmith
+4. Drone by GameAnime
+
