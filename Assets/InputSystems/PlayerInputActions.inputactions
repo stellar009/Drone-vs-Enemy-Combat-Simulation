@@ -45,6 +45,16 @@
                     "interactions": "Press(pressPoint=0.1,behavior=2)",
                     "initialStateCheck": false,
                     "priority": 0
+                },
+                {
+                    "name": "Restart",
+                    "type": "Button",
+                    "id": "08aa8240-9c18-4125-9250-49b9f2b5c82b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
                 }
             ],
             "bindings": [
@@ -133,6 +143,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e833d500-987e-425a-a1ba-904ac608489e",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Restart",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

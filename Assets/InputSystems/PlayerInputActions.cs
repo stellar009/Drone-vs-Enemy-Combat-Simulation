@@ -131,6 +131,16 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""interactions"": ""Press(pressPoint=0.1,behavior=2)"",
                     ""initialStateCheck"": false,
                     ""priority"": 0
+                },
+                {
+                    ""name"": ""Restart"",
+                    ""type"": ""Button"",
+                    ""id"": ""08aa8240-9c18-4125-9250-49b9f2b5c82b"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false,
+                    ""priority"": 0
                 }
             ],
             ""bindings"": [
@@ -221,6 +231,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Fire"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e833d500-987e-425a-a1ba-904ac608489e"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Restart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -233,6 +254,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Drone_Ascend = m_Drone.FindAction("Ascend", throwIfNotFound: true);
         m_Drone_Descend = m_Drone.FindAction("Descend", throwIfNotFound: true);
         m_Drone_Fire = m_Drone.FindAction("Fire", throwIfNotFound: true);
+        m_Drone_Restart = m_Drone.FindAction("Restart", throwIfNotFound: true);
     }
 
     ~@PlayerInputActions()
@@ -317,6 +339,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Drone_Ascend;
     private readonly InputAction m_Drone_Descend;
     private readonly InputAction m_Drone_Fire;
+    private readonly InputAction m_Drone_Restart;
     /// <summary>
     /// Provides access to input actions defined in input action map "Drone".
     /// </summary>
@@ -344,6 +367,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Drone/Fire".
         /// </summary>
         public InputAction @Fire => m_Wrapper.m_Drone_Fire;
+        /// <summary>
+        /// Provides access to the underlying input action "Drone/Restart".
+        /// </summary>
+        public InputAction @Restart => m_Wrapper.m_Drone_Restart;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -382,6 +409,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Fire.started += instance.OnFire;
             @Fire.performed += instance.OnFire;
             @Fire.canceled += instance.OnFire;
+            @Restart.started += instance.OnRestart;
+            @Restart.performed += instance.OnRestart;
+            @Restart.canceled += instance.OnRestart;
         }
 
         /// <summary>
@@ -405,6 +435,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Fire.started -= instance.OnFire;
             @Fire.performed -= instance.OnFire;
             @Fire.canceled -= instance.OnFire;
+            @Restart.started -= instance.OnRestart;
+            @Restart.performed -= instance.OnRestart;
+            @Restart.canceled -= instance.OnRestart;
         }
 
         /// <summary>
@@ -473,5 +506,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnFire(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Restart" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnRestart(InputAction.CallbackContext context);
     }
 }

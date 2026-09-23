@@ -6,6 +6,7 @@ public class InputManager : MonoBehaviour
     public static InputManager Instance;
 
     private PlayerInputActions m_PlayerInputActions;
+    private GameManager m_GM;
 
     public Vector2 flightMovement {  get; private set; }
     public bool ascend { get; private set; }
@@ -23,6 +24,7 @@ public class InputManager : MonoBehaviour
         EnableCursor(false);
 
         m_PlayerInputActions = new PlayerInputActions();
+        m_GM = FindObjectOfType<GameManager>();
     }
 
     private void OnEnable()
@@ -35,10 +37,12 @@ public class InputManager : MonoBehaviour
         m_PlayerInputActions.Drone.Ascend.performed += AscendDrone;
         m_PlayerInputActions.Drone.Descend.performed += DescendDrone;
         m_PlayerInputActions.Drone.Fire.performed += ShootMissile;
+        m_PlayerInputActions.Drone.Restart.performed += RestartSimulation;
     }
 
     private void OnDisable()
     {
+        m_PlayerInputActions.Drone.Restart.performed -= RestartSimulation;
         m_PlayerInputActions.Drone.Fire.performed -= ShootMissile;
         m_PlayerInputActions.Drone.Descend.performed -= DescendDrone;
         m_PlayerInputActions.Drone.Ascend.performed -= AscendDrone;
@@ -72,6 +76,11 @@ public class InputManager : MonoBehaviour
     void ShootMissile(InputAction.CallbackContext context)
     {
         shoot = !shoot;
+    }
+
+    void RestartSimulation(InputAction.CallbackContext context)
+    {
+        m_GM.RestartSim();
     }
 
     public void EnableCursor(bool enable)
