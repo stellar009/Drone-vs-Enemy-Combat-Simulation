@@ -1,3 +1,5 @@
+A 3D drone combat simulation built in Unity where the player pilots a drone against AI enemies patrolling via NavMesh
+
 **Controls**:
 1. **WASD** for movement Forward/Left/Backward/Right
 2. **Q/E** for Ascend/Descend
@@ -7,7 +9,7 @@
 **Features Implemented**:
 1. Enemy can patrol using NavMesh and waypoints
 2. Shoots at player when the player inside the enemy range
-3. Centralized InputSystem all inputs can be managed via a single scipt
+3. Centralized InputSystem all inputs can be managed via a single script
 4. When missile hits the enemy the enemy gets destroyed
 5. Added maximum flight height
 
@@ -17,11 +19,11 @@
 3. Missiles fired by enemies can destroy on the spot and enemy dies
 4. Particle effects plays when the object is created in the scene
 5. Missiles unable to destroy player
-6. camera can clips through the walls and obstacles
+6. Camera can clips through the walls and obstacles
 
 **Limitations**:
 1. Player can't rotate
-2. player is bound to a closed space environment(50 X 50 units)
+2. Player is bound to a closed space environment(50 X 50 units)
 3. Enemy cant shoot or fire missiles in upward and downward directions
 
 **Assets Used**:
