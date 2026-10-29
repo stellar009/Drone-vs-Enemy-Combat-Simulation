@@ -24,8 +24,6 @@
 <img width="1920" height="1080" alt="Screenshot (109)" src="https://github.com/user-attachments/assets/210636eb-19f6-444c-b5ee-375a974023ff" />
 </p>
 
-> Replace this block with in-game captures once available. Recommended format: a 1280×720 PNG or a short MP4/GIF loop showing the drone, patrolling enemies, and a missile hit.
-
 **Demo Video:** [Watch on Google Drive](https://drive.google.com/file/d/1tOBkUSpqKls0rHYptmIGnxcUioetzmdG/view?usp=sharing)
 
 ---
